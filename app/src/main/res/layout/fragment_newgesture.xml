@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/tvNewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="Create a new gesture"
+            android:textStyle="bold"
+            android:textSize="30sp"/>
+
+        <EditText
+            android:id="@+id/etGestureName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvNewTitle"
+            android:layout_marginTop="10dp"
+            android:hint="Enter a name"/>
+
+        <RadioGroup
+            android:id="@+id/rgDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/etGestureName"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <RadioButton
+                android:id="@+id/rbNewSmartwatch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Smartwatch"
+                android:paddingLeft="10dp"/>
+
+            <RadioButton
+                android:id="@+id/rbNewSmartphone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Smartphone"
+                android:paddingLeft="10dp"
+                android:checked="true"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/llSensorInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rgDevice"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5">
+
+                <TextView
+                    android:id="@+id/tvAccCaption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center_horizontal"
+                    android:text="Accelerometer"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tvAccX"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvAccCaption"
+                    android:gravity="center_horizontal"
+                    android:text="X: 10.101010"/>
+
+                <TextView
+                    android:id="@+id/tvAccY"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvAccX"
+                    android:gravity="center_horizontal"
+                    android:text="Y: 10.101010"/>
+
+                <TextView
+                    android:id="@+id/tvAccZ"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvAccY"
+                    android:gravity="center_horizontal"
+                    android:text="Z: 10.101010"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5">
+
+                <TextView
+                    android:id="@+id/tvGyrCaption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center_horizontal"
+                    android:text="Gyroscope"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tvGyrX"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvGyrCaption"
+                    android:text="X: 20.2020202"
+                    android:gravity="center_horizontal"/>
+
+                <TextView
+                    android:id="@+id/tvGyrY"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvGyrX"
+                    android:text="Y: 20.2020202"
+                    android:gravity="center_horizontal"/>
+
+                <TextView
+                    android:id="@+id/tvGyrZ"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvGyrY"
+                    android:text="Z: 20.2020202"
+                    android:gravity="center_horizontal"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvTrainingInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/llSensorInfo"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:text="Number of sequences: 0"
+                android:textSize="16sp"/>
+
+            <Button
+                android:id="@+id/btnStartTraining"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvTrainingInfo"
+                android:layout_marginTop="5dp"
+                android:text="Start Training"
+                android:textSize="18sp"/>
+
+            <Button
+                android:id="@+id/btnStopTraining"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnStartTraining"
+                android:layout_marginTop="5dp"
+                android:enabled="false"
+                android:text="Stop Training"/>
+
+            <TextView
+                android:id="@+id/tvRecordingText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnStopTraining"
+                android:layout_marginTop="20dp"
+                android:text="Record trainings sequences for your gesture."
+                android:textSize="16sp"
+                android:gravity="center"/>
+
+            <LinearLayout
+                android:id="@+id/llButtonLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvRecordingText"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <Button
+                    android:id="@+id/btnStartRecording"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Start"
+                    android:enabled="false"/>
+
+                <Button
+                    android:id="@+id/btnStopRecording"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Stop"
+                    android:enabled="false"/>
+
+            </LinearLayout>
+
+    </RelativeLayout>
+</ScrollView>

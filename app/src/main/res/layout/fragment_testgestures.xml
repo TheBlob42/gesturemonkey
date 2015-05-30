@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/tvTestTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Test your Gestures"
+            android:textStyle="bold"
+            android:textSize="30sp"/>
+
+        <TextView
+            android:id="@+id/tvSelectedGestures"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTestTitle"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="Kreis\nViereck\nDies sind nicht die Droiden, die ihr sucht\nZorro"
+            android:textSize="16sp"/>
+
+        <RadioGroup
+            android:id="@+id/rgDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/tvSelectedGestures"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <RadioButton
+                android:id="@+id/rbSmartwatch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Smartwatch"
+                android:paddingLeft="10dp"/>
+
+            <RadioButton
+                android:id="@+id/rbSmartphone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Smartphone"
+                android:paddingLeft="10dp"
+                android:checked="true"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/llSensorInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rgDevice"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5">
+
+                <TextView
+                    android:id="@+id/tvAccCaption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center_horizontal"
+                    android:text="Accelerometer"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tvAccX"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvAccCaption"
+                    android:gravity="center_horizontal"
+                    android:text="X: 10.101010"/>
+
+                <TextView
+                    android:id="@+id/tvAccY"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvAccX"
+                    android:gravity="center_horizontal"
+                    android:text="Y: 10.101010"/>
+
+                <TextView
+                    android:id="@+id/tvAccZ"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvAccY"
+                    android:gravity="center_horizontal"
+                    android:text="Z: 10.101010"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5">
+
+                <TextView
+                    android:id="@+id/tvGyrCaption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center_horizontal"
+                    android:text="Gyroscope"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tvGyrX"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvGyrCaption"
+                    android:text="X: 20.2020202"
+                    android:gravity="center_horizontal"/>
+
+                <TextView
+                    android:id="@+id/tvGyrY"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvGyrX"
+                    android:text="Y: 20.2020202"
+                    android:gravity="center_horizontal"/>
+
+                <TextView
+                    android:id="@+id/tvGyrZ"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvGyrY"
+                    android:text="Z: 20.2020202"
+                    android:gravity="center_horizontal"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlAutomatic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/llSensorInfo"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enable Automatic Recognition"
+                android:textSize="16sp"
+                android:layout_centerVertical="true"/>
+
+            <CheckBox
+                android:id="@+id/chkAutoRecognition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/etAutoDelay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rlAutomatic"
+            android:inputType="numberDecimal"
+            android:text="500"/>
+
+        <Button
+            android:id="@+id/btnStartRecognition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etAutoDelay"
+            android:layout_marginTop="10dp"
+            android:text="Start Recognition"/>
+
+        <Button
+            android:id="@+id/btnStopRecgnition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnStartRecognition"
+            android:layout_marginTop="10dp"
+            android:text="Stop Recognition"
+            android:enabled="false"/>
+
+    </RelativeLayout>
+</ScrollView>
