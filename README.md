@@ -40,18 +40,19 @@ You have to manually add the library to your Project. If you're using AndroidStu
 3.  Enter the path to the downloaded *GestureMonkey.aar* file and give the new module a name
   +  You should now see a new module in your project structure
 4. In the *build.gradle* file of your main module enter the following line to the dependencies:
-
+  ```json
         dependencies {
             //your other dependencies
             compile project(':<the name of your gesture monkey module>')
         }
+  ```
 5.  Sync the project
 
 ## <a name="howto"></a>How to use GestureMonkey
 Almost everything you have to do is handled by the central *GestureMonkey* object which is implemented as a Singleton. With the *.getInstance()* method you are always able to access this object.
 
 Before you use any of its functionality you should configure your instance of *GestureMonkey* like in the following example:
-
+```java
     private GestuerMonkey monkey;
 
     // your other variables
@@ -60,7 +61,7 @@ Before you use any of its functionality you should configure your instance of *G
     monkey.addFilter(new IdleFilter(1.2));
     monkey.addFilter(new DirectionEquivalenceFilter(0.3))
     monkey.addOnGestureListener(this);
-  
+```
 You should always add an *IdleFilter* and a *DirectionEquivalenceFilter* like above. These two Filters reduce the incoming data of the accelerometer sensor for a better perfomance. You also have the possibility to write your own filters. For more information about the filter classes see [here]().
 
 You should also register a listener (or more if you want to) which should be called if a gesture was recognized. For more information about the OnGestureListener see [here](). 
