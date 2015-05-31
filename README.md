@@ -1,7 +1,6 @@
 # GestureMonkey
 GestureMonkey is a library for 3D gesture recognition, specially designed for Android and Android Wear.  
-It uses the acceleroemeter sensor of your Smartphone/Smartwatch to train and recognizes certain movements of the device called gestures. You are able to 
-to register listeners that react to a recognized gesture with your individual actions. In this way it offers you a new way of interacting 
+It uses the acceleroemeter sensor of your Smartphone/Smartwatch to train and recognizes certain movements of the device, so called gestures. You are able to register listeners that react to a recognized gesture with your individual actions. In this way it offers you a new way of interacting 
 with your apps and programms.
 
 ### List of contents
@@ -18,10 +17,10 @@ with your apps and programms.
 
 ### <a name="project"></a>About this project
 This library and all related elements were developed during my master study at Technische Hochschule Mittelhessen ([www.thm.de](www.thm.de)) as part of 
-my development project. Unfortunately i don't have the time right now to work on this project, therefore it has some rough edges. 
+my development project. Unfortunately i don't have the time right now to work on this project anymore, therefore it has some rough edges. 
 Nevertheless i hope it helps you or gives you some good ideas for your own projects.
 
-*Note: This project didnt't use git as system for version control before. Thats the reason why there so few commits right now.*
+*Note: This project didnt't use git as system for version control before. Thats the reason why there are so few commits right now.*
 
 ### <a name="repo"></a>About this repository
 This repository contains the whole project, including the library itself and the helper app called *GestureMonkeyExporter*, which lets
@@ -41,10 +40,10 @@ You have to manually add the library to your Project. If you're using AndroidStu
   +  You should now see a new module in your project structure
 4. In the *build.gradle* file of your main module enter the following line to the dependencies:
 
-        dependencies {
-            //your other dependencies
-            compile project(':<the name of your gesture monkey module>')
-        }
+      dependencies {
+          //your other dependencies
+          compile project(':<the name of your gesture monkey module>')
+      }
 
 5.  Sync the project
 
@@ -114,7 +113,7 @@ Ends the actual sequence. The gathered data will be stored until you end the tra
 If you're calling this method with a value of *true* for the abort variable, the actual sequence will canceled. All gathered data will be lost. This does not stop the train-mode, so you can keep performing other sequences.
 
 ### <a name="rec"></a>Recognize gestures
-There are modes to recognize gestures: Manual or Automatic.
+There are two modes to recognize gestures: Manual or Automatic.
 
 #### Manual
 Manual means, that you have to tell the *GestureMonkey* when it should listen for an incoming gesture an when to stop listening. Only the data in this period of time will be used to recognize a eventual gesture. Use the following two methods to start and stop the recognition process:
@@ -131,9 +130,9 @@ First you have to activate the automatic gesture recognition:
 + *void enableAutoRecognition(double sensitivity, double delay)*  
 This activated the automatic gesture recognition. The GestureMonkey now trys to evaluate the beginning and the end of a gesture by itself.
     - *sensitivity*  
-This value tells the GestureMonkey how strong a movement of the device has to be to start the automatic recognition process (f.e. 0.5)
+This value tells the GestureMonkey how strong a movement of the device has to be to start the automatic recognition process (e.g. 0.5)
     - *delay*  
-This value tells the GestureMonkey after how many milliseconds without any further movement the  gesture recognition should end (f.e. 500 – 1000)
+This value tells the GestureMonkey after how many milliseconds without any further movement the  gesture recognition should end (e.g. 500 – 1000)
 
 + *void disableAutoRecognition()*  
 This disables the automatic gesture recognition.
