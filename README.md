@@ -39,12 +39,12 @@ You have to manually add the library to your Project. If you're using AndroidStu
 3.  Enter the path to the downloaded *GestureMonkey.aar* file and give the new module a name
   +  You should now see a new module in your project structure
 4. In the *build.gradle* file of your main module enter the following line to the dependencies:
-
+```
       dependencies {
           //your other dependencies
           compile project(':<the name of your gesture monkey module>')
       }
-
+```
 5.  Sync the project
 
 ## <a name="howto"></a>How to use GestureMonkey
